@@ -1,0 +1,591 @@
+Microsoft Windows [Version 10.0.18362.657]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\doug>python
+Python 3.8.4 (tags/v3.8.4:dfa645a, Jul 13 2020, 16:46:45) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 'python'
+>>> x[0] # indexing
+'p'
+>>> x[3]
+'h'
+>>> x[1]
+'y'
+>>> x[5]
+'n'
+>>> y = 'hello world!'
+>>> len(y)
+12
+>>> x[5]
+'n'
+>>> x[len(x)-1]
+'n'
+>>> y
+'hello world!'
+>>> y[len(y)-1]
+'!'
+>>> z = 'sssjjsasajasajsaljsnjjsasyqgusuq'
+>>> z[len(z)-1]
+'q'
+>>> startrek = 'Beam me, up Scotty!'
+>>> startrek[0:4]
+'Beam'
+>>> startrek[4:]
+' me, up Scotty!'
+>>> startrek[5:]
+'me, up Scotty!'
+>>> startrek[0:10:2]
+'Ba e '
+>>> startrek
+'Beam me, up Scotty!'
+>>> x = 'hello world!'
+>>> x[-1]
+'!'
+>>> x[-len(x)]
+'h'
+>>> x[15]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> cave = "Echo echo '
+  File "<stdin>", line 1
+    cave = "Echo echo '
+                      ^
+SyntaxError: EOL while scanning string literal
+>>> cave = "Echo echo "
+>>> cave * 2
+'Echo echo Echo echo '
+>>> cave * 10
+'Echo echo Echo echo Echo echo Echo echo Echo echo Echo echo Echo echo Echo echo Echo echo Echo echo '
+>>> cave = 'drip.drop.drip.drop.drip.drop'
+>>> cave.split('.')
+['drip', 'drop', 'drip', 'drop', 'drip', 'drop']
+>>> cave = 'drip drop drip drop drip drop'
+>>> cave.split(' ')
+['drip', 'drop', 'drip', 'drop', 'drip', 'drop']
+>>> caves = '      are a vast and empty spaces       '
+>>> caves.strip()
+'are a vast and empty spaces'
+>>> # format method in strings
+>>> x = '{} x {}'
+>>> x
+'{} x {}'
+>>> x = '{} x {}'.format(10, 100)
+>>> x
+'10 x 100'
+>>> a, b = 10, 100
+>>> x = '{} x {} = {}'.format(10, 100, a * b)
+>>> x
+'10 x 100 = 1000'
+>>> myipaddr = '192.168.70.55'
+>>> mymac = 'Oe:87:C6:5c:70:c3'
+>>> print('Your ip address is {} and your MAC is {}'.format(myipaddr, mymac))
+Your ip address is 192.168.70.55 and your MAC is Oe:87:C6:5c:70:c3
+>>> print('Your ip address is{} and your MAC is{}'.format(myipaddr, mymac)))
+  File "<stdin>", line 1
+    print('Your ip address is{} and your MAC is{}'.format(myipaddr, mymac)))
+                                                                           ^
+SyntaxError: unmatched ')'
+>>> print('Your ip address is{} and your MAC is{}'.format(myipaddr, mymac))
+Your ip address is192.168.70.55 and your MAC isOe:87:C6:5c:70:c3
+>>> print('Your ip address is {0} and your MAC is {1}'.format(myipaddr, mymac))
+Your ip address is 192.168.70.55 and your MAC is Oe:87:C6:5c:70:c3
+>>> print('Your ip address is {1} and your MAC is {0}'.format(myipaddr, mymac))
+Your ip address is Oe:87:C6:5c:70:c3 and your MAC is 192.168.70.55
+>>> print('Your ip address is {} and your MAC is {} and another item {}'.format(myipaddr, mymac, 1000 ))
+Your ip address is 192.168.70.55 and your MAC is Oe:87:C6:5c:70:c3 and another item 1000
+>>> # fstring
+>>> x, y = 'python', 'rocks'
+>>> z = f'{x} {y}'
+>>> z
+'python rocks'
+>>> game = 'Tetris'
+>>> year = 1984.2632
+>>> print(game, year)
+Tetris 1984.2632
+>>> print(10, 'x', 100, 10 * 100)
+10 x 100 1000
+>>> name = input('what is your name?')
+what is your name?Doug
+>>> x
+'python'
+>>> name
+'Doug'
+>>> # input() -> reads in input from the user
+>>> integer = int(input("Enter in a number '))
+  File "<stdin>", line 1
+    integer = int(input("Enter in a number '))
+                                             ^
+SyntaxError: EOL while scanning string literal
+>>> integer = int(input("Enter in a number "))
+Enter in a number 100
+>>> integer * 3
+300
+>>> int('100')
+100
+>>> '100' + '100'  # '100100'
+'100100'
+>>> 100 + 100
+200
+>>> int('100') * 5
+500
+>>> integer = input('Enter in an integer ')
+Enter in an integer 100
+>>> integer
+'100'
+>>> type(integer)
+<class 'str'>
+>>> integer = int(input('Enter in an integer '))
+Enter in an integer 100
+>>> integer
+100
+>>> type(integer)
+<class 'int'>
+>>> integer = int(input('Enter in an integer '))
+Enter in an integer 10
+>>> integer * 20
+200
+>>> integer = input('Enter in an integer ')
+Enter in an integer 500
+>>> integer
+'500'
+>>> integer + 10
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>> x = []
+>>> type(x)
+<class 'list'>
+>>> nums = [1, 2, 3, 4]
+>>> # indexing a list
+>>> nums[0]
+1
+>>> nums[3]
+4
+>>> nums[-1]
+4
+>>> nums[0:2]
+[1, 2]
+>>> nums[0] + nums[-1]
+5
+>>> nums[0] * nums[-1]
+4
+>>> x = ['Marty', 'we', 'need', 'to', 'get']
+>>> y = ['back', 'to', 'the', 'future']
+>>> x + y
+['Marty', 'we', 'need', 'to', 'get', 'back', 'to', 'the', 'future']
+>>> x.extend(y)
+>>> x
+['Marty', 'we', 'need', 'to', 'get', 'back', 'to', 'the', 'future']
+>>> [1, 2] * 5
+[1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+>>> random = [5, 7, 10, 2.3232, 'computers']
+>>> type(random)
+<class 'list'>
+>>> random[-1]
+'computers'
+>>> random[-1].upper()
+'COMPUTERS'
+>>> x = [1, 2, 3, [2, 4]]
+>>> x[0]
+1
+>>> x[3]
+[2, 4]
+>>> x[3][1]
+4
+>>> x = [1, 2, 3, [2, 4 [3, 4]]]
+<stdin>:1: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not subscriptable
+>>> x = [1, 2, 3, [2, 4, [3, 4]]]
+>>> y = [1, 3, 5]
+>>> y[0] = 100
+>>> y
+[100, 3, 5]
+>>> x = ()
+>>> type(x)
+<class 'tuple'>
+>>> y = (,)
+  File "<stdin>", line 1
+    y = (,)
+         ^
+SyntaxError: invalid syntax
+>>> y = (1,)
+>>> x = (1)
+>>> (1) + (10 * 100)
+1001
+>>> x = (2, 4, 6, 8)
+>>> # index tuples using [] notation
+>>> x[0]
+2
+>>> x[-1]
+8
+>>> # slice tuples
+>>> x[0:2]
+(2, 4)
+>>> # tuples are immutable
+>>> x[0] = 5
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> x, y = 10, 20
+>>> x, '+', y, '=', x + y
+(10, '+', 20, '=', 30)
+>>> print(x, '+', y, '=', x + y)
+10 + 20 = 30
+>>> help()
+
+Welcome to Python 3.8's help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at https://docs.python.org/3.8/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
+
+help> time
+Help on built-in module time:
+
+NAME
+    time - This module provides various functions to manipulate time values.
+
+DESCRIPTION
+    There are two standard representations of time.  One is the number
+    of seconds since the Epoch, in UTC (a.k.a. GMT).  It may be an integer
+    or a floating point number (to represent fractions of seconds).
+    The Epoch is system-defined; on Unix, it is generally January 1st, 1970.
+    The actual value can be retrieved by calling gmtime(0).
+
+    The other representation is a tuple of 9 integers giving local time.
+    The tuple items are:
+      year (including century, e.g. 1998)
+      month (1-12)
+      day (1-31)
+      hours (0-23)
+      minutes (0-59)
+      seconds (0-59)
+      weekday (0-6, Monday is 0)
+      Julian day (day in the year, 1-366)
+      DST (Daylight Savings Time) flag (-1, 0 or 1)
+    If the DST flag is 0, the time is given in the regular time zone;
+    if it is 1, the time is given in the DST time zone;
+    if it is -1, mktime() should guess based on the date and time.
+
+CLASSES
+    builtins.tuple(builtins.object)
+        struct_time
+
+    class struct_time(builtins.tuple)
+     |  struct_time(iterable=(), /)
+     |
+     |  The time value as returned by gmtime(), localtime(), and strptime(), and
+     |  accepted by asctime(), mktime() and strftime().  May be considered as a
+     |  sequence of 9 integers.
+     |
+     |  Note that several fields' values are not the same as those defined by
+     |  the C language standard for struct tm.  For example, the value of the
+     |  field tm_year is the actual year, not year - 1900.  See individual
+     |  fields' descriptions for details.
+     |
+     |  Method resolution order:
+     |      struct_time
+     |      builtins.tuple
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  tm_gmtoff
+     |      offset from UTC in seconds
+     |
+     |  tm_hour
+     |      hours, range [0, 23]
+     |
+     |  tm_isdst
+     |      1 if summer time is in effect, 0 if not, and -1 if unknown
+     |
+     |  tm_mday
+     |      day of month, range [1, 31]
+     |
+     |  tm_min
+     |      minutes, range [0, 59]
+     |
+     |  tm_mon
+     |      month of year, range [1, 12]
+     |
+     |  tm_sec
+     |      seconds, range [0, 61])
+     |
+     |  tm_wday
+     |      day of week, range [0, 6], Monday is 0
+     |
+     |  tm_yday
+     |      day of year, range [1, 366]
+     |
+     |  tm_year
+     |      year, for example, 1993
+     |
+     |  tm_zone
+     |      abbreviation of timezone name
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  n_fields = 11
+     |
+     |  n_sequence_fields = 9
+     |
+     |  n_unnamed_fields = 0
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.tuple:
+     |
+     |  __add__(self, value, /)
+     |      Return self+value.
+     |
+     |  __contains__(self, key, /)
+     |      Return key in self.
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __getnewargs__(self, /)
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __mul__(self, value, /)
+     |      Return self*value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __rmul__(self, value, /)
+     |      Return value*self.
+     |
+     |  count(self, value, /)
+     |      Return number of occurrences of value.
+     |
+     |  index(self, value, start=0, stop=9223372036854775807, /)
+     |      Return first index of value.
+     |
+     |      Raises ValueError if the value is not present.
+
+FUNCTIONS
+    asctime(...)
+        asctime([tuple]) -> string
+
+        Convert a time tuple to a string, e.g. 'Sat Jun 06 16:26:11 1998'.
+        When the time tuple is not present, current time as returned by localtime()
+        is used.
+
+    ctime(...)
+        ctime(seconds) -> string
+
+        Convert a time in seconds since the Epoch to a string in local time.
+        This is equivalent to asctime(localtime(seconds)). When the time tuple is
+        not present, current time as returned by localtime() is used.
+
+    get_clock_info(...)
+        get_clock_info(name: str) -> dict
+
+        Get information of the specified clock.
+
+    gmtime(...)
+        gmtime([seconds]) -> (tm_year, tm_mon, tm_mday, tm_hour, tm_min,
+                               tm_sec, tm_wday, tm_yday, tm_isdst)
+
+        Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.
+        GMT).  When 'seconds' is not passed in, convert the current time instead.
+
+        If the platform supports the tm_gmtoff and tm_zone, they are available as
+        attributes only.
+
+    localtime(...)
+        localtime([seconds]) -> (tm_year,tm_mon,tm_mday,tm_hour,tm_min,
+                                  tm_sec,tm_wday,tm_yday,tm_isdst)
+
+        Convert seconds since the Epoch to a time tuple expressing local time.
+        When 'seconds' is not passed in, convert the current time instead.
+
+    mktime(...)
+        mktime(tuple) -> floating point number
+
+        Convert a time tuple in local time to seconds since the Epoch.
+        Note that mktime(gmtime(0)) will not generally return zero for most
+        time zones; instead the returned value will either be equal to that
+        of the timezone or altzone attributes on the time module.
+
+    monotonic(...)
+        monotonic() -> float
+
+        Monotonic clock, cannot go backward.
+
+    monotonic_ns(...)
+        monotonic_ns() -> int
+
+        Monotonic clock, cannot go backward, as nanoseconds.
+
+    perf_counter(...)
+        perf_counter() -> float
+
+        Performance counter for benchmarking.
+
+    perf_counter_ns(...)
+        perf_counter_ns() -> int
+
+        Performance counter for benchmarking as nanoseconds.
+
+    process_time(...)
+        process_time() -> float
+
+        Process time for profiling: sum of the kernel and user-space CPU time.
+
+    process_time_ns(...)
+        process_time() -> int
+
+        Process time for profiling as nanoseconds:
+        sum of the kernel and user-space CPU time.
+
+    sleep(...)
+        sleep(seconds)
+
+        Delay execution for a given number of seconds.  The argument may be
+        a floating point number for subsecond precision.
+
+    strftime(...)
+        strftime(format[, tuple]) -> string
+
+        Convert a time tuple to a string according to a format specification.
+        See the library reference manual for formatting codes. When the time tuple
+        is not present, current time as returned by localtime() is used.
+
+        Commonly used format codes:
+
+        %Y  Year with century as a decimal number.
+        %m  Month as a decimal number [01,12].
+        %d  Day of the month as a decimal number [01,31].
+        %H  Hour (24-hour clock) as a decimal number [00,23].
+        %M  Minute as a decimal number [00,59].
+        %S  Second as a decimal number [00,61].
+        %z  Time zone offset from UTC.
+        %a  Locale's abbreviated weekday name.
+        %A  Locale's full weekday name.
+        %b  Locale's abbreviated month name.
+        %B  Locale's full month name.
+        %c  Locale's appropriate date and time representation.
+        %I  Hour (12-hour clock) as a decimal number [01,12].
+        %p  Locale's equivalent of either AM or PM.
+
+        Other codes may be available on your platform.  See documentation for
+        the C library strftime function.
+
+    strptime(...)
+        strptime(string, format) -> struct_time
+
+        Parse a string to a time tuple according to a format specification.
+        See the library reference manual for formatting codes (same as
+        strftime()).
+
+        Commonly used format codes:
+
+        %Y  Year with century as a decimal number.
+        %m  Month as a decimal number [01,12].
+        %d  Day of the month as a decimal number [01,31].
+        %H  Hour (24-hour clock) as a decimal number [00,23].
+        %M  Minute as a decimal number [00,59].
+        %S  Second as a decimal number [00,61].
+        %z  Time zone offset from UTC.
+        %a  Locale's abbreviated weekday name.
+        %A  Locale's full weekday name.
+        %b  Locale's abbreviated month name.
+        %B  Locale's full month name.
+        %c  Locale's appropriate date and time representation.
+        %I  Hour (12-hour clock) as a decimal number [01,12].
+        %p  Locale's equivalent of either AM or PM.
+
+        Other codes may be available on your platform.  See documentation for
+        the C library strftime function.
+
+    thread_time(...)
+        thread_time() -> float
+
+        Thread time for profiling: sum of the kernel and user-space CPU time.
+
+    thread_time_ns(...)
+        thread_time() -> int
+
+        Thread time for profiling as nanoseconds:
+        sum of the kernel and user-space CPU time.
+
+    time(...)
+        time() -> floating point number
+
+        Return the current time in seconds since the Epoch.
+        Fractions of a second may be present if the system clock provides them.
+
+    time_ns(...)
+        time_ns() -> int
+
+help> quit()
+No Python documentation found for 'quit()'.
+Use help() to get the interactive help utility.
+Use help(str) for help on the str class.
+
+help> exit()
+No Python documentation found for 'exit()'.
+Use help() to get the interactive help utility.
+Use help(str) for help on the str class.
+
+help> q
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+>>>
